@@ -1,3 +1,4 @@
+<!--
 <h1> Create a New User</h1>
  <form accept-charset="UTF-8" action="/users" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -9,3 +10,33 @@
   <input type="password" id="password" name="user[password]"><br><br>
   <input type="submit" value="Submit">
 </form>
+-->
+
+<%= form_with model: @user, class: "class_style" do |f| %>
+	<%= label_tag(:username, "Username:") %>
+  <%= f.text_field :username, placeholder: "Name here" %>
+
+  <%= label_tag(:email, "Email:")%>
+  <%= f.email_field :email, placeholder: "example@gmail.com"%>
+
+  <%= f.label :password, "password" %>
+  <%= f.password_field (:password) %>
+
+  <%= f.submit "Create" %>
+<% end %>
+
+<!--
+<%= form_for @user, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <%= label_tag(:username, "Username:") %>
+  <%= f.text_field :username %>
+
+  <%= label_tag(:email, "Email:") %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password, "password" %>
+  <%= f.password_field (:password) %>
+
+  <%= f.submit "Create" %>
+<% end %>
+-->
+
