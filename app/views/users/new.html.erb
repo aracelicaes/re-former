@@ -1,6 +1,6 @@
 <h1> Create a New User</h1>
 <!--
- <form accept-charset="UTF-8" action="/users" method="post">
+ <form accept-charset="UTF-8" action="<%= users_path %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="username">Username:</label>
   <input type="text" id="username" name="user[username]"><br><br>
@@ -17,7 +17,7 @@
   <%= f.text_field :username, placeholder: "Name here" %>
 
   <%= label_tag(:email, "Email:")%>
-  <%= f.email_field :email, placeholder: "example@gmail.com"%>
+  <%= f.text_field :email, placeholder: "example@gmail.com"%>
 
   <%= f.label :password, "password" %>
   <%= f.password_field (:password) %>

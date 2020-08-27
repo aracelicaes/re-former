@@ -1,5 +1,5 @@
 <h1> Update an Existing User</h1>
-<%= form_for @user, url: {action: "update"}, html: {class: "nifty_form"} do |f| %>
+<%= form_for @user, url: {action: "edit"}, html: {class: "nifty_form"} do |f| %>
 	<%= label_tag(:username, "Username:") %>
   <%= f.text_field :username %>
 
